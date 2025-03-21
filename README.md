@@ -8,6 +8,13 @@ docker compose up -d
 docker compose exec rails bash -c "rm -f tmp/pids/server.pid && rails s -b '0.0.0.0'"
 ```
 
+フロントアンドのアプリケーションを起動する(新しいターミナルで実行してください。)
+```bash
+docker compose exec next bash -c "npm run dev"
+```
+npm run devでサーバーを起動した後、http://localhost:8000 からアクセスができます
+
+
 rails-next-zenn-clone直下で以下を実行し新規Railsアプリを作成。
 ```shell
 docker compose run --rm rails rails new . --force --api --database=mysql --skip-action-cable --skip-sprockets --skip-turbolinks --skip-webpack-install --skip-test --skip-bundle
